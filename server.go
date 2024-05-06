@@ -7,7 +7,7 @@ import (
 )
 
 func main() {
-	http.HandleFunc("/hello-world", hadleHelloWorld)
+	http.HandleFunc("/hello-world", handleHelloWorld)
 	http.HandleFunc("/health", handleHealth)
 	http.HandleFunc("/new-endpoint", handleNewEndpoint)
 
@@ -21,7 +21,7 @@ func main() {
 	}
 }
 
-func hadleHelloWorld(writer http.ResponseWriter, request *http.Request) {
+func handleHelloWorld(writer http.ResponseWriter, request *http.Request) {
 
 	if request.Method != "GET" {
 		http.Error(writer, http.StatusText(http.StatusMethodNotAllowed), http.StatusMethodNotAllowed)
